@@ -10,49 +10,52 @@ public class Pizza {
 
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
-        if(isVeg){
+        if(this.isVeg==true){
             price = 300;
         }
         else
             price = 400;
-        bill = "";
+        this.bill = "Base Price Of The Pizza: " + price;
         // your code goes here
     }
 
     public int getPrice(){
         return this.price;
     }
-    public void addPrice(int price){
-        this.price += price;
-    }
 
     public void addExtraCheese(){
-        cheese = cheese + 80;
+        if(cheese==0)
+            cheese = cheese + 80;
         // your code goes here
     }
 
     public void addExtraToppings(){
-        if(isVeg)
-            topping = topping + 70;
-        else
-            topping = topping + 120;
+        if(topping==0){
+            if(isVeg)
+                topping = topping + 70;
+            else
+                topping = topping + 120;
+        }
         // your code goes here
     }
 
     public void addTakeaway(){
-        paper = paper + 20;
+        if(paper==0)
+            paper = paper + 20;
         // your code goes here
     }
 
     public String getBill(){
         // your code goes here
-        bill = "Base Price Of The Pizza: " + price;
+
         if(cheese != 0)
             bill = bill + "\nExtra Cheese Added: " + cheese;
-        if(topping != 0)
-            bill = bill + "\nExtra Toppings Added: " + topping;
+        if(topping == 70)
+            bill = bill + "\nExtra Toppings Added: " + 70;
+        if(topping == 120)
+            bill = bill + "\nExtra Toppings Added: " + 120;
         if(paper != 0)
-            bill = bill + "\nPaperbag Added: " + paper;
+            bill = bill + "\nPaperbag Added: " + 20;
         price = price + cheese + topping + paper;
         bill = bill + "\nTotal Price: " + price;
         return this.bill;
