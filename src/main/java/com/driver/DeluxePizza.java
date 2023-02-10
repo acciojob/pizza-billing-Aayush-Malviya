@@ -5,9 +5,11 @@ public class DeluxePizza extends Pizza {
     public DeluxePizza(Boolean isVeg) {
         super(isVeg);
         // your code goes here
-        if(isVeg==true)
-            super.setPrice(super.getPrice() + 150);
-        else
-            super.setPrice(super.getPrice() + 200);
+//        if(isVeg==true)
+//            super.addPrice(150);
+//        else
+//            super.addPrice(200);
+        addExtraToppings();
+        addExtraCheese();
     }
 }
